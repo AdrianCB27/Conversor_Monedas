@@ -1,0 +1,14 @@
+nav{
+    display: flex;
+    align-items: center;
+    height: 65px;
+}
+p{
+    font-size: larger;
+    font-style:normal;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}

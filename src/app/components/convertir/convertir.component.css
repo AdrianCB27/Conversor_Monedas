@@ -1,0 +1,19 @@
+.contenedor{
+    background-color:bisque;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.contenedorFormulario{
+    margin-top: 50px;
+}
+input{
+    border-radius: 5px;
+    width: 700px;
+}
+h2{
+    text-align: center;
+}
+select{
+    width: 100%;
+}
