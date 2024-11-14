@@ -1,20 +1,68 @@
 <div class="contenedor">
   <div class="contenedorFormulario">
     <h2>Conversor de monedas</h2>
-    <input type="number" name="input" id="input" /><br />
+    <input
+      class="btn btn-light"
+      [(ngModel)]="cantidad"
+      (keyup.enter)="obtenerMonedas()"
+      type="number"
+      name="input"
+      id="input"
+    /><br/>
     <div class="row">
       <div class="col">
         <h2>Tengo</h2>
-            <!-- select1 -->
+        <!-- select1 -->
 
-        <select class="col" name="moneda1" id="moneda1"></select>
+        <select
+          class="form-select"
+          [(ngModel)]="moneda1"
+          class="col"
+          name="moneda1"
+          id="moneda1"
+        >
+          <option *ngFor="let nombreMoneda of arrayMonedas">
+            {{ nombreMoneda }}
+          </option>
+        </select>
       </div>
       <div class="col">
-              <!-- select2 -->
+        <!-- select2 -->
 
         <h2>Quiero</h2>
-        <select class="col" name="moneda2" id="moneda2"></select>
+        <select
+          class="form-select"
+          [(ngModel)]="moneda2"
+          class="col"
+          name="moneda2"
+          id="moneda2"
+        >
+          <option *ngFor="let nombreMoneda of arrayMonedas">
+            {{ nombreMoneda }}
+          </option>
+        </select>
       </div>
+    </div>
+
+    <div class="row d-flex justify-content-center mt-5">
+      <button
+        class="w-50 btn btn-lg btn-success"
+        (click)="calcularEquivalencia(cantidad, moneda1, moneda2)"
+      >
+        Convertir</button
+      ><br />
+    </div>
+    <div class="row d-flex justify-content-around mt-3">
+      <button class="w-25 btn btn-success" *ngIf="valorConversion">
+        {{ moneda1 }}
+      </button>
+
+      <button class="w-25 btn btn-warning" *ngIf="valorConversion">
+        {{ valorConversion }}
+      </button>
+      <button class="w-25 btn btn-success" *ngIf="valorConversion">
+        {{ moneda2 }}
+      </button>
     </div>
   </div>
 </div>
